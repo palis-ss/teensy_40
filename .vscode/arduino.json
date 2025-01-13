@@ -1,0 +1,7 @@
+{
+    "configuration": "usb=serial,speed=600,opt=o2std,keys=en-us",
+    "board": "teensy:avr:teensy40",
+    "output": "build",
+    "port": "COM6",
+    "sketch": "teensy_40.ino"
+}
