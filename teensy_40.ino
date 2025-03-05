@@ -16,8 +16,6 @@
  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
-
-
 #include "src/freertos-teensy/arduino_freertos.h"
 #include "avr/pgmspace.h"
 
@@ -36,21 +34,20 @@ static void task1(void *)
 
 static void task2(void *)
 {
-  Serial.begin(0);
   while (true)
   {
     Serial.println("TICK");
-    vTaskDelay(pdMS_TO_TICKS(1'000));
+    vTaskDelay(pdMS_TO_TICKS(1000));
 
     Serial.println("TOCK");
-    vTaskDelay(pdMS_TO_TICKS(1'000));
+    vTaskDelay(pdMS_TO_TICKS(1000));
   }
 }
 
 FLASHMEM __attribute__((noinline)) void setup()
 {
   Serial.begin(0);
-  delay(2'000);
+  delay(2000);
 
   if (CrashReport)
   {
